@@ -182,7 +182,6 @@ void encrypt_file(char *input_filename, char *output_filename, uint16_t key, uin
 			fwrite(&output_val, 1, 3, output_file);
 		}
 	}
-
 	free(keys);
 
 	fclose(input_file);
