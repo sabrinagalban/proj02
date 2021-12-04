@@ -39,7 +39,6 @@ uint8_t expand(uint8_t input) {
  *
  * @return the 6 bit value that was gotten through the process above
  */
-
 uint8_t confuse(uint8_t input) {
 	return (s1_box[input >> 4] << 3) | s2_box[input & 15];
 }
@@ -84,7 +83,6 @@ uint16_t feistel_round(uint16_t input, uint8_t key) {
  *
  * @return round_keys the generated round keys.
  */
-
 uint8_t *generate_round_keys(uint16_t original_key, unsigned int num_rounds) {	
 	if (num_rounds > k_length) { 
 		return NULL;
@@ -128,7 +126,6 @@ uint8_t *generate_round_keys(uint16_t original_key, unsigned int num_rounds) {
  *
  * @return unencrypted_data the unencrypted data file
  */
-
 uint16_t encrypt(uint16_t unencrypted_data, uint8_t *round_keys, int num_rounds) {
 	int i;
 	// for loop to iterate through the number of rounds
@@ -144,6 +141,7 @@ uint16_t encrypt(uint16_t unencrypted_data, uint8_t *round_keys, int num_rounds)
 	unencrypted_data = l_encrypted | r_encrypted;
 	return unencrypted_data;
 }
+
 /**
  * This function will decrypt the datafile that is passed into it. Similiar to the encrypt function,
  * the data is split into two halves, shifted to match the required size, combined then return the
@@ -155,7 +153,6 @@ uint16_t encrypt(uint16_t unencrypted_data, uint8_t *round_keys, int num_rounds)
  *
  * @return encrypted_data the encrypted data file
  */
-
 uint16_t decrypt(uint16_t encrypted_data, uint8_t *round_keys, int num_rounds) {
 	int i;
 	// for loop to iterate through the number of rounds
