@@ -7,7 +7,6 @@
 
 #include "simplified_des.h"
 
-
 void decrypt_file(char *encrypted_filename, char *output_filename, uint16_t key, uint8_t num_rounds);
 
 void print_usage(char *prog_name) {
